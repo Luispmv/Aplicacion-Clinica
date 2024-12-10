@@ -16,7 +16,7 @@ class Medico(models.Model):
     crm = models.CharField(verbose_name="CRM", max_length=200)
     validador_telefono = RegexValidator(
         regex=r'^\+?1?\d{9,15}$',
-        message="El número debe estar en este formato: '+99 99 9999-0000'."
+        message="El número debe estar en este formato: '0000000000'."
     )
     telefono = models.CharField(
         verbose_name="Teléfono", 
