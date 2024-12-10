@@ -1,10 +1,38 @@
 {% extends 'base.html' %}
+{% load static %}
+
 {% block container %}
 
+    <style>
+        body{
+            background-color: #9694FF;
+        }
+        .jumbotron{
+            background-color: #9694FF;
+            color: white;
+        }
+        .page-header{
+            margin: 0;
+        }
+        main{
+            display: grid;
+            grid-template-columns: repeat(4,1fr);
+            width: 90%;
+        }
+        main img{
+            width: 100%;
+        }
+    </style>
+
     <div class="jumbotron page-header">
-        <h1>Clínica Django</h1>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-        <p><a class="btn btn-primary">Saber más</a></p>
+        <h1>Cuida de ti y de aquellos que mas amas</h1>
+        <p>Accede a especialistas medicos de todas las areas y agenda una consulta con ellos</p>
+        <main style="display: grid; grid-template-columns: repeat(4,1fr); width: 100%;">
+            <img src="https://images.pexels.com/photos/5214995/pexels-photo-5214995.jpeg?auto=compress&cs=tinysrgb&w=600" alt="">
+            <img src="https://images.pexels.com/photos/3714743/pexels-photo-3714743.jpeg?auto=compress&cs=tinysrgb&w=600" alt="">
+            <img src="https://images.pexels.com/photos/5452201/pexels-photo-5452201.jpeg?auto=compress&cs=tinysrgb&w=600" alt="">
+            <img src="https://images.pexels.com/photos/5452293/pexels-photo-5452293.jpeg?auto=compress&cs=tinysrgb&w=600" alt="">
+        </main>
     </div>
 
 {% endblock %}
