@@ -5,13 +5,13 @@ from django.core.validators import RegexValidator
 from django.core.exceptions import ValidationError
 
 class Especialidad(models.Model):
-    nombre = models.CharField(verbose_name="Nombre", max_length=200)  # Renombrado 'nome' a 'nombre'.
+    nombre = models.CharField(verbose_name="Nombre", max_length=200)
     
     def __str__(self):
         return f'{self.nombre}'
 
 class Medico(models.Model):
-    nombre = models.CharField(verbose_name="Nombre", max_length=200)  # Renombrado 'name' a 'nombre'.
+    nombre = models.CharField(verbose_name="Nombre", max_length=200)  
     correo_electronico = models.EmailField(verbose_name="Correo electrónico")
     crm = models.CharField(verbose_name="CRM", max_length=200)
     validador_telefono = RegexValidator(
