@@ -1,0 +1,57 @@
+{% extends "accounts/index.html" %}
+
+{% block title %}
+    Médicos
+{% endblock %}
+
+{% block accounts_container %}
+<h2>Médicos</h2>
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>
+                ID
+            </th>
+            <th>
+                Nombre
+            </th>
+            <th>
+                Correo Electrónico
+            </th>
+            <th>
+                CRM 
+            </th>
+            <th>
+                Especialidad
+            </th>
+            <th>
+                Teléfono
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for medico in object_list %}
+        <tr>
+            <td>
+                <a href=""># {{ medico.pk }}</a>
+            </td>
+            <td>
+                {{ medico.nombre }}
+            </td>
+            <td>
+                {{ medico.correo_electronico }}
+            </td>
+            <td>
+                {{ medico.crm }}
+            </td>
+            <td>
+                {{ medico.especialidad }}
+            </td>
+            <td>
+                {{ medico.telefono }}
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}

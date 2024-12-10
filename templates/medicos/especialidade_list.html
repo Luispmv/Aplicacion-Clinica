@@ -1,0 +1,33 @@
+{% extends "accounts/index.html" %}
+
+{% block title %}
+   Especialidades
+{% endblock %}
+
+{% block accounts_container %}
+<h2>Especialidades</h2>
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>
+                ID
+            </th>
+            <th>
+                Nombre
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for especialidad in object_list %}
+        <tr>
+            <td>
+                <a href=""># {{ especialidad.pk }}</a>
+            </td>
+            <td>
+                {{ especialidad.nombre }}
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}

@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+
+{% block container %}
+  <div class="jumbotron page-header">
+    <p>¡Has salido!</p>
+      <a href="{% url 'accounts:login' %}">
+        Regresa al Login.</a>
+  </div>
+{% endblock %}

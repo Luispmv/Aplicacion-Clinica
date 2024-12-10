@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    Mi Cuenta | {{ block.super }}
+{% endblock %}
+
+{% block container %}
+     <ol class="breadcrumb">
+          <li><a href="{% url 'accounts:index' %}">Inicio</a></li>
+          <li class="active">Mi Cuenta</li>
+        </ol>
+        <div class="row">
+            <div class="col-md-4">
+                <div class="list-group">
+                  <a href="#" class="list-group-item active">Mi Cuenta</a>
+                  <a href="{% url 'accounts:update_user' %}" class="list-group-item">Cambiar Nombre y Correo</a>
+                  <a href="{% url 'accounts:update_password' %}" class="list-group-item">Cambiar Contraseña</a>
+                  <a href="{% url 'clientes:cliente_atualizar' %}" class="list-group-item">Datos Complementarios</a>
+                  <a href="{% url 'clientes:consulta_list' %}" class="list-group-item">Mis Consultas</a>
+                  {% if request.user.is_staff or request.user.is_superuser %}
+                  <a href="{% url 'medicos:agenda_lista' %}" class="list-group-item">Agendas</a>
+                  <a href="{% url 'medicos:medicos_lista' %}" class="list-group-item">Médicos</a>
+                  <a href="{% url 'medicos:especialidade_lista' %}" class="list-group-item">Especialidades</a>
+                  {% endif %}
+                </div>
+            </div>
+            <div class="col-md-8">
+            {% block accounts_container %}
+                <h2>Bienvenido {{ user.name }}</h2>
+            {% endblock %}
+            </div>
+        </div>
+{% endblock %}
