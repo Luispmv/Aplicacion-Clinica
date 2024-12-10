@@ -6,7 +6,37 @@
     Registro | {{ block.super }}
 {% endblock %}
 
+
 {% block container %}
+
+<style>
+  body{
+    background-color: #9694FF;
+    color: white;
+    outline: none;
+  }
+  h1{
+    color: white;
+  }
+  .row{
+    display: flex;
+    justify-content: center;
+  }
+  .form-group{
+    display: grid;
+  }
+  .labelput{
+    display: flex;
+    width: 100%;
+  }
+  .btn{
+    width: 100%;
+    background-color: #504EBA;
+    color: white;
+    border: none;
+  }
+</style>
+
 <div class="row">
     <div class="col-md-8 col-md-offset-2">
         <div class="page-header">
@@ -22,7 +52,7 @@
             <fieldset>
                 {% for field in form %}
                 <div class="form-group{% if field.errors %} has-error{% endif %}">
-                  <label for="{{ field.auto_id }}" class="col-md-3 control-label">
+                  <label for="{{ field.auto_id }}" class="labelput col-md-3 control-label">
                   {{ field.label }}</label>
                   <div class="col-md-9">
                     {% render_field field class="form-control" %}
@@ -33,15 +63,13 @@
                 </div>
                 {% endfor %}
                 <div class="form-group">
-                  <div class="col-md-9 col-md-offset-3">
+                  <div class="col-md-9">
                     <button type="submit" class="btn btn-primary">Registrar</button>
                   </div>
                 </div>
             </fieldset>
         </form>
-        <div class="well">
-          <a href="{% url 'accounts:login' %}">Si ya tienes una cuenta, inicia sesión.</a>
-        </div>
+        <a style="color: white; text-align: center;" href="{% url 'accounts:login' %}">Ya tengo una cuenta</a>
     </div>
 </div>
 {% endblock %}
