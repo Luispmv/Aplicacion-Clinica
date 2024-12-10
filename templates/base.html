@@ -11,18 +11,18 @@
 	<link rel="stylesheet" href="{% static 'assets/extra.css' %}" media="screen" />
 </head>
 <body>
-    <div class="navbar navbar-default navbar-fixed-top">
+    <div class="navbar navbar-default navbar-fixed-top  navigation-bar">
       <div class="container">
         <div class="navbar-header">
-          <a href="{% url 'index' %}" class="navbar-brand">Clínica</a>
-          <button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#navbar-main">
+          <a href="{% url 'index' %}" class="navbar-brand"><img src="{% static 'assets/logo.svg'%}" alt=""></a>
+          <button style="border-color: none;" class="navbar-toggle" type="button" data-toggle="collapse" data-target="#navbar-main">
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
         </div>
         <div class="navbar-collapse collapse" id="navbar-main">
-          <ul class="nav navbar-nav">
+          <ul class="nav navbar-nav nav-items">
             <li>
               <a href="{% url 'clientes:consulta_create' %}">Consultas</a>
             </li>
@@ -40,11 +40,11 @@
           </ul>
           <ul class="nav navbar-nav navbar-right">
             {% if user.is_authenticated %}
-              <li><a href="{% url 'accounts:index' %}">Mi Cuenta</a></li>
-              <li><a href="{% url 'accounts:logout' %}">Salir</a></li>
+              <li><a href="{% url 'accounts:index' %}"><img src="{% static 'assets/user.svg'%}" alt=""></a></li>
+              <li><a href="{% url 'accounts:logout' %}"><img src="{% static 'assets/logout.svg'%}" alt=""></a></li>
             {% else %}
-              <li><a href="{% url 'accounts:login' %}">Entrar</a></li>
-              <li><a href="{% url 'accounts:register' %}">Registro</a></li>
+              <li><a href="{% url 'accounts:login' %}">Iniciar Sesion</a></li>
+              <li><a href="{% url 'accounts:register' %}">Registrarme</a></li>
             {% endif %}
           </ul>
         </div>
@@ -59,17 +59,6 @@
       {% endfor %}
     {% endblock messages %} 
 		{% block container %} {% endblock %}
-    <footer>
-      <div class="row">
-        <div class="col-lg-12">
-          <ul class="list-unstyled">
-            <li class="pull-right"><a href="#top">Volver al Top</a></li>
-            <li><a href="">Inicio</a></li>
-            <li><a href="">Términos y Privacidad</a></li>
-          </ul>
-        </div>
-      </div>
-    </footer>
   </div>
 	<script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
   <script src="https://kit.fontawesome.com/c2a3297ec9.js" crossorigin="anonymous"></script>

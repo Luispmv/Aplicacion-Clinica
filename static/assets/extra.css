@@ -16,3 +16,16 @@ footer {
 .padding-left {
     padding-left: 10px;
 }
+.navigation-bar{
+    background-color: #9694FF;
+}
+
+.navbar-collapse{
+    background-color: #9694FF;
+}
+.nav-items li a:hover{
+    color: white !important;
+}
+.navbar-brand{
+    padding: 1rem;
+}
