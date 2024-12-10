@@ -1,10 +1,28 @@
 {% extends "accounts/index.html" %}
 
+{% load static %}
+
 {% block title %}
     Agendas
 {% endblock %}
 
 {% block accounts_container %}
+
+<style>
+    h2{
+        color: white;
+    }
+    thead{
+        background-color: #504EBA;
+        color: white;
+    }
+    tbody{
+        background-color: white;
+        color: #9694FF;
+    }
+</style>
+
+
 <h2>Agendas Disponibles</h2>
 <table class="table table-bordered">
     <thead>
@@ -43,10 +61,10 @@
             </td>
             <td>
                 <a href="{% url 'medicos:agendar_consulta_atualizar' consulta.id %}" class="text-primary" style="padding-left: 10px; text-decoration: none;">
-                    <i class="fas fa-edit"></i>
+                    <img src="{% static 'assets/pen.svg'%}" alt="">
                 </a>
                 <a href="{% url 'medicos:agendar_consulta_deletar' consulta.id %}" class="mr-1 text-danger" style="padding-left: 10px; text-decoration: none;">
-                    <i class="fas fa-trash-alt"></i>
+                    <img src="{% static 'assets/mdi_trash.svg'%}" alt="">
                 </a>
             </td>
         </tr>

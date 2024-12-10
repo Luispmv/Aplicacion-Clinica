@@ -1,9 +1,25 @@
 {% extends "base.html" %}
 
 {% block container %}
-  <div class="jumbotron page-header">
-    <p>¡Has salido!</p>
-      <a href="{% url 'accounts:login' %}">
-        Regresa al Login.</a>
+
+<style>
+  body{
+    background-color: #9694FF;
+  }
+  .logout-container{
+    background-color: #9694FF;
+    text-align: center;
+  }
+  p{
+    text-align: center;
+    font-size: 5rem;
+    color: white;
+  }
+</style>
+
+  <div class="logout-container jumbotron page-header">
+    <p style="font-size: 5rem;">¡Vuelve pronto 😃!</p>
+      <a style="color: white;" href="{% url 'accounts:login' %}">
+        Ir a incio.</a>
   </div>
 {% endblock %}
